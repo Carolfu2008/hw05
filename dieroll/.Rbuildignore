@@ -1,0 +1,5 @@
+^README.md
+^devtools-dieroll.R
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$

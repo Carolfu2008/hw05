@@ -1,0 +1,21 @@
+Package: dieroll
+Type: Package
+Title: Die Rolling
+Version: 0.1.0
+Authors@R: person("Huiqing", "Fu", email = "carol2008@berkeley.edu",
+                  role = c("aut", "cre"))
+Description: Provides functions to simulate tossing a die multiple times.
+Depends:
+    R (>= 3.1.0)
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Collate:
+    die.R
+    roll.R
+    plot-roll.R
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr

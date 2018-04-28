@@ -1,0 +1,47 @@
+---
+title: "Getting Started with dieroll"
+author: "Huiqing Fu"
+date: `r Sys.Date()`
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to dieroll}      %\VignetteEngine{knitr::rmarkdown}               %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+library(dieroll)
+```
+
+## Die Rolling
+The package `"dieroll"` is a minimal implementation for simulating rolling a die a given number of times, and to visualize the relative frequencies in such a series of rolls.
+
+##Creating a die
+The first step is to create a `"die"` object with the function `roll()`:    
+```{r}
+mydie <- die()
+mydie
+```
+By default, die() creates a fair die with standard sides of 6, and with probability values for each side of 1/6.    
+You can change the defatuls with arguments `sides` and `prob`:
+```{r}
+load <- die(sides = 1:6, prob = c(0.2,0.2,0.1,0.2,0.2,0.1))
+load
+```
+##Tossing a coin
+Once you have defined a "die" object, you can use the function `roll()` to roll a die a given number of times. The output will be an object of class "roll", which will contain the vector of `rolls`:
+```{r}
+roll100 <- roll(mydie, time = 100)
+roll100
+```
+The `summary()` function gives you a nice table of frequencies:
+```{r}
+summary(roll100)
+```
+##Plot of relative frequencies
+You can use the function `plot()` to create a graphic with the relative frequencies of a series of die rolls:
+```{r}
+plot(roll100)
+```
+
+
+
